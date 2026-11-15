@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wasatch Ad Co | More Booked Jobs for Utah Home-Service Businesses</title>
 <meta name="description" content="Wasatch Ad Co runs Facebook and Instagram ads that bring Utah home-service businesses more booked jobs.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%2314304f'/%3E%3Csvg x='18' y='24' width='64' height='52' viewBox='0 0 120 96'%3E%3Cpath d='M4 92 L40 44 L58 66 L84 30 L116 92 Z' fill='%23ffffff'/%3E%3Cpath d='M14 82 L40 52 L58 74 L92 30' stroke='%2314304f' stroke-width='15' fill='none'/%3E%3Cpath d='M14 82 L40 52 L58 74 L92 30' stroke='%23ff7a1a' stroke-width='8' fill='none'/%3E%3Cpath d='M84 23 L102 17 L100 36 Z' fill='%23ff7a1a'/%3E%3C/svg%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&display=swap" rel="stylesheet">
 <style>
 :root { --navy: #14304f; --orange: #ff7a1a; --light: #f5f7fa; --text: #222; }
 * { box-sizing: border-box; }
@@ -12,10 +15,13 @@ html { scroll-behavior: smooth; }
 body { margin: 0; font-family: system-ui, -apple-system, sans-serif; color: var(--text); line-height: 1.6; }
 a { color: inherit; }
 .wrap { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
-header { position: absolute; top: 0; left: 0; right: 0; color: #fff; padding: 18px 0; z-index: 2; }
-header .wrap { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-weight: 800; font-size: 1.3rem; letter-spacing: 0.5px; }
-.logo span { color: var(--orange); }
+header { position: absolute; top: 0; left: 0; right: 0; color: #fff; padding: 14px 0; z-index: 2; }
+header .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff; }
+.logo > svg { width: 46px; height: 37px; flex-shrink: 0; }
+.logo-text { font-family: 'Archivo', system-ui, sans-serif; font-size: 1.35rem; font-weight: 800; letter-spacing: -0.3px; white-space: nowrap; }
+.logo-text span { color: var(--orange); }
+.emblem { display: block; width: 150px; height: 150px; margin: 0 auto 24px; }
 .btn { display: inline-block; background: var(--orange); color: #fff; text-decoration: none; font-weight: 700; padding: 14px 26px; border-radius: 8px; transition: transform 0.2s, box-shadow 0.2s; }
 .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(255,122,26,0.4); }
 .hero { position: relative; min-height: 88vh; display: flex; align-items: center; color: #fff; padding: 110px 0 80px; background: linear-gradient(120deg, rgba(20,48,79,0.92) 0%, rgba(20,48,79,0.6) 60%, rgba(20,48,79,0.35) 100%), url('hero.jpg') center/cover no-repeat, var(--navy); }
@@ -44,17 +50,32 @@ h2 { color: var(--navy); font-size: 2rem; margin-top: 0; }
 footer { text-align: center; padding: 26px 0; font-size: 0.9rem; color: #666; }
 .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
 .reveal.show { opacity: 1; transform: none; }
-@media (max-width: 600px) { .hero h1 { font-size: 2.2rem; } }
+@media (max-width: 600px) {
+  .hero h1 { font-size: 2.2rem; }
+  .logo > svg { width: 38px; height: 30px; }
+  .logo-text { font-size: 1.1rem; }
+  header .btn { padding: 10px 16px; font-size: 0.9rem; }
+}
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } .reveal { opacity: 1; transform: none; } }
 </style>
 </head>
 <body>
+
 <header>
   <div class="wrap">
-    <div class="logo">Wasatch <span>Ad Co</span></div>
+    <a class="logo" href="#" aria-label="Wasatch Ad Co home">
+      <svg viewBox="0 0 120 96" aria-hidden="true">
+        <path d="M4 92 L40 44 L58 66 L84 30 L116 92 Z" fill="#ffffff"/>
+        <path d="M14 82 L40 52 L58 74 L92 30" stroke="#14304f" stroke-width="15" fill="none" stroke-linecap="square"/>
+        <path d="M14 82 L40 52 L58 74 L92 30" stroke="#ff7a1a" stroke-width="8" fill="none" stroke-linecap="square"/>
+        <path d="M84 23 L102 17 L100 36 Z" fill="#ff7a1a"/>
+      </svg>
+      <span class="logo-text">Wasatch <span>Ad Co</span></span>
+    </a>
     <a class="btn" href="mailto:ryan@wasatchadco.com">Get in touch</a>
   </div>
 </header>
+
 <div class="hero">
   <div class="wrap">
     <h1>More booked jobs for Utah <span>home-service</span> businesses.</h1>
@@ -62,6 +83,7 @@ footer { text-align: center; padding: 26px 0; font-size: 0.9rem; color: #666; }
     <a class="btn" href="mailto:ryan@wasatchadco.com?subject=I%20want%20more%20leads">Get more leads</a>
   </div>
 </div>
+
 <div class="stats">
   <div class="wrap">
     <div class="stat reveal"><b>~$20</b><span>target cost per lead</span></div>
@@ -69,6 +91,7 @@ footer { text-align: center; padding: 26px 0; font-size: 0.9rem; color: #666; }
     <div class="stat reveal"><b>100%</b><span>Utah-based and local</span></div>
   </div>
 </div>
+
 <section>
   <div class="wrap">
     <h2 class="reveal">How it works</h2>
@@ -79,6 +102,7 @@ footer { text-align: center; padding: 26px 0; font-size: 0.9rem; color: #666; }
     </div>
   </div>
 </section>
+
 <section class="alt">
   <div class="wrap about reveal">
     <img class="photo" src="ryan.jpg" alt="Ryan Berghout, founder of Wasatch Ad Co">
@@ -89,16 +113,37 @@ footer { text-align: center; padding: 26px 0; font-size: 0.9rem; color: #666; }
     </div>
   </div>
 </section>
+
 <section class="cta">
   <div class="wrap reveal">
+      <svg class="emblem" viewBox="0 0 240 240" role="img" aria-label="Wasatch Ad Co, Utah">
+      <defs>
+        <path id="ctaTop" d="M 32 120 A 88 88 0 0 1 208 120"/>
+        <path id="ctaBot" d="M 17 120 A 103 103 0 0 0 223 120"/>
+      </defs>
+      <circle cx="120" cy="120" r="112" fill="#14304f" stroke="#ffffff" stroke-width="5"/>
+      <circle cx="120" cy="120" r="80" fill="none" stroke="#ffffff" stroke-width="2"/>
+      <text font-family="Archivo, sans-serif" font-weight="900" font-size="19" letter-spacing="4" fill="#ffffff" text-anchor="middle"><textPath href="#ctaTop" startOffset="50%">WASATCH AD CO.</textPath></text>
+      <text font-family="Archivo, sans-serif" font-weight="800" font-size="16" letter-spacing="7" fill="#ffffff" text-anchor="middle"><textPath href="#ctaBot" startOffset="50%">UTAH</textPath></text>
+      <circle cx="24" cy="120" r="4" fill="#ff7a1a"/>
+      <circle cx="216" cy="120" r="4" fill="#ff7a1a"/>
+      <svg x="70" y="78" width="100" height="80" viewBox="0 0 120 96">
+        <path d="M4 92 L40 44 L58 66 L84 30 L116 92 Z" fill="#ffffff"/>
+        <path d="M14 82 L40 52 L58 74 L92 30" stroke="#14304f" stroke-width="15" fill="none" stroke-linecap="square"/>
+        <path d="M14 82 L40 52 L58 74 L92 30" stroke="#ff7a1a" stroke-width="8" fill="none" stroke-linecap="square"/>
+        <path d="M84 23 L102 17 L100 36 Z" fill="#ff7a1a"/>
+      </svg>
+    </svg>
     <h2>Ready for a fuller calendar?</h2>
     <p>Send a quick email and we'll talk about what more leads could look like for your business.</p>
     <a class="btn" href="mailto:ryan@wasatchadco.com?subject=I%20want%20more%20leads">Email Ryan</a>
   </div>
 </section>
+
 <footer>
-  &copy; 2026 Wasatch Ad Co &middot; <a href="privacy.html">Privacy Policy</a>
+  <div>&copy; 2026 Wasatch Ad Co &middot; <a href="privacy.html">Privacy Policy</a></div>
 </footer>
+
 <script>
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } });
