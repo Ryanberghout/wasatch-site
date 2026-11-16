@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&display=swap" rel="stylesheet">
 <style>
-:root { --navy: #14304f; --orange: #ff7a1a; --light: #f5f7fa; --text: #222; }
+:root { --navy: #14304f; --orange: #ff7a1a; --light: #f5f7fa; --text: #222; --muted: #55606d; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; font-family: system-ui, -apple-system, sans-serif; color: var(--text); line-height: 1.6; }
@@ -21,40 +21,57 @@ header .wrap { display: flex; justify-content: space-between; align-items: cente
 .logo > svg { width: 46px; height: 37px; flex-shrink: 0; }
 .logo-text { font-family: 'Archivo', system-ui, sans-serif; font-size: 1.35rem; font-weight: 800; letter-spacing: -0.3px; white-space: nowrap; }
 .logo-text span { color: var(--orange); }
-.emblem { display: block; width: 150px; height: 150px; margin: 0 auto 24px; }
 .btn { display: inline-block; background: var(--orange); color: #fff; text-decoration: none; font-weight: 700; padding: 14px 26px; border-radius: 8px; transition: transform 0.2s, box-shadow 0.2s; }
 .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(255,122,26,0.4); }
+.btn-ghost { background: transparent; border: 2px solid currentColor; }
+.btn-ghost:hover { box-shadow: none; background: rgba(255,255,255,0.08); }
 .hero { position: relative; min-height: 88vh; display: flex; align-items: center; color: #fff; padding: 110px 0 80px; background: linear-gradient(120deg, rgba(20,48,79,0.92) 0%, rgba(20,48,79,0.6) 60%, rgba(20,48,79,0.35) 100%), url('hero.jpg') center/cover no-repeat, var(--navy); }
-.hero h1 { font-size: 3rem; line-height: 1.1; margin: 0 0 18px; max-width: 720px; animation: rise 0.8s ease-out both; }
+.hero h1 { font-size: 3rem; line-height: 1.1; margin: 0 0 18px; max-width: 720px; animation: rise 0.5s ease-out both; }
 .hero h1 span { color: var(--orange); }
-.hero p { font-size: 1.25rem; max-width: 620px; opacity: 0.92; margin-bottom: 30px; animation: rise 0.8s 0.15s ease-out both; }
-.hero .btn { animation: rise 0.8s 0.3s ease-out both; }
-@keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
-.stats { background: var(--orange); color: #fff; padding: 34px 0; }
-.stats .wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; }
-.stat b { display: block; font-size: 2.4rem; line-height: 1.1; }
-.stat span { font-size: 0.95rem; opacity: 0.95; }
+.hero p { font-size: 1.25rem; max-width: 620px; opacity: 0.92; margin-bottom: 30px; animation: rise 0.5s 0.1s ease-out both; }
+.hero .btn { animation: rise 0.5s 0.2s ease-out both; }
+@keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.promises { background: var(--orange); color: #fff; padding: 26px 0; }
+.promises .wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; text-align: center; font-weight: 700; font-size: 1.1rem; }
 section { padding: 80px 0; }
 h2 { color: var(--navy); font-size: 2rem; margin-top: 0; }
-.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
+.lead { color: var(--muted); max-width: 640px; margin-top: -6px; }
+.steps, .checks { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
 .card { background: var(--light); border-radius: 12px; padding: 26px; transition: transform 0.2s, box-shadow 0.2s; }
 .card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(20,48,79,0.12); }
 .card .num { display: inline-block; background: var(--orange); color: #fff; font-weight: 800; width: 36px; height: 36px; border-radius: 50%; text-align: center; line-height: 36px; margin-bottom: 10px; }
 .card h3 { margin: 6px 0; color: var(--navy); }
+.checks { margin-top: 28px; gap: 14px 28px; }
+.check { display: flex; gap: 12px; align-items: flex-start; }
+.check svg { flex-shrink: 0; margin-top: 3px; }
+.check b { display: block; color: var(--navy); }
+.check span { color: var(--muted); font-size: 0.95rem; }
 .alt { background: var(--light); }
+.offer { background: var(--navy); color: #fff; border-radius: 16px; padding: 40px; display: flex; gap: 32px; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+.offer h2 { color: #fff; margin-bottom: 8px; }
+.offer .tag { display: inline-block; background: var(--orange); color: #fff; font-size: 0.8rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; padding: 4px 12px; border-radius: 999px; margin-bottom: 14px; }
+.offer p { margin: 0; opacity: 0.9; max-width: 560px; }
+.offer small { display: block; margin-top: 12px; opacity: 0.7; }
 .about { display: flex; gap: 36px; align-items: center; flex-wrap: wrap; }
 .photo { width: 220px; height: 220px; border-radius: 50%; object-fit: cover; background: var(--navy); border: 6px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
 .about div { flex: 1; min-width: 260px; }
 .cta { background: var(--navy); color: #fff; text-align: center; }
 .cta h2 { color: #fff; }
+.emblem { display: block; width: 130px; height: 130px; margin: 0 auto 24px; }
+.ways { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 32px; text-align: left; }
+.way { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+.way h3 { margin: 0; font-size: 1.4rem; }
+.way p { margin: 0 0 10px; opacity: 0.85; }
+.way .btn { margin-top: auto; }
 footer { text-align: center; padding: 26px 0; font-size: 0.9rem; color: #666; }
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.45s ease-out, transform 0.45s ease-out; }
 .reveal.show { opacity: 1; transform: none; }
 @media (max-width: 600px) {
   .hero h1 { font-size: 2.2rem; }
   .logo > svg { width: 38px; height: 30px; }
   .logo-text { font-size: 1.1rem; }
   header .btn { padding: 10px 16px; font-size: 0.9rem; }
+  .offer { padding: 28px; }
 }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } .reveal { opacity: 1; transform: none; } }
 </style>
@@ -72,7 +89,7 @@ footer { text-align: center; padding: 26px 0; font-size: 0.9rem; color: #666; }
       </svg>
       <span class="logo-text">Wasatch <span>Ad Co</span></span>
     </a>
-    <a class="btn" href="mailto:ryan@wasatchadco.com">Get in touch</a>
+    <a class="btn" href="https://calendly.com/ryan-wasatchadco/15min">Book a call</a>
   </div>
 </header>
 
@@ -80,15 +97,15 @@ footer { text-align: center; padding: 26px 0; font-size: 0.9rem; color: #666; }
   <div class="wrap">
     <h1>More booked jobs for Utah <span>home-service</span> businesses.</h1>
     <p>We run Facebook and Instagram ads that bring you real leads, not likes. Simple ads, strong offers, and a clear focus on making you money.</p>
-    <a class="btn" href="https://calendly.com/ryan-wasatchadco/30min">Get more leads</a>
+    <a class="btn" href="https://calendly.com/ryan-wasatchadco/15min">Book a 15-minute call</a>
   </div>
 </div>
 
-<div class="stats">
+<div class="promises">
   <div class="wrap">
-    <div class="stat reveal"><b>~$20</b><span>target cost per lead</span></div>
-    <div class="stat reveal"><b>20+</b><span>leads a month goal per client</span></div>
-    <div class="stat reveal"><b>100%</b><span>Utah-based and local</span></div>
+    <div class="reveal">No long-term contracts</div>
+    <div class="reveal">Local to Utah</div>
+    <div class="reveal">You work with the owner</div>
   </div>
 </div>
 
@@ -99,6 +116,35 @@ footer { text-align: center; padding: 26px 0; font-size: 0.9rem; color: #666; }
       <div class="card reveal"><div class="num">1</div><h3>We build your offer</h3><p>We find the hook that gets local homeowners to raise their hand, like a low-cost tune-up or inspection.</p></div>
       <div class="card reveal"><div class="num">2</div><h3>We run your ads</h3><p>We launch and manage ads on Facebook and Instagram, aimed at the neighbourhoods you actually serve.</p></div>
       <div class="card reveal"><div class="num">3</div><h3>You get the calls</h3><p>Leads come straight to you with name, phone and details, ready for you to book the job.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2 class="reveal">What you get</h2>
+    <p class="lead reveal">Not just pretty ads. Everything it takes to turn ad spend into phone calls.</p>
+    <div class="checks">
+      <div class="check reveal"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff7a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Ad creative</b><span>Scroll-stopping images and copy built around a strong offer.</span></div></div>
+      <div class="check reveal"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff7a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Ad management</b><span>Launching, testing and adjusting your campaigns every week.</span></div></div>
+      <div class="check reveal"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff7a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Landing page</b><span>A simple page or instant form that turns clicks into leads.</span></div></div>
+      <div class="check reveal"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff7a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Leads straight to you</b><span>Name, phone and job details sent to your phone right away.</span></div></div>
+      <div class="check reveal"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff7a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>A call script</b><span>What to say when you ring a new lead, so more of them book.</span></div></div>
+      <div class="check reveal"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff7a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Monthly report</b><span>Plain-English numbers: leads, cost per lead and what's next.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="offer reveal">
+      <div>
+        <span class="tag">Founding client offer</span>
+        <h2>Taking on my first 3 Utah clients.</h2>
+        <p>I'm opening a few spots at a reduced rate in exchange for honest feedback and a review once you've seen results.</p>
+        <small>Ad spend is paid directly to Meta and is separate from my fee.</small>
+      </div>
+      <a class="btn" href="https://calendly.com/ryan-wasatchadco/15min">Claim a spot</a>
     </div>
   </div>
 </section>
@@ -116,7 +162,7 @@ footer { text-align: center; padding: 26px 0; font-size: 0.9rem; color: #666; }
 
 <section class="cta">
   <div class="wrap reveal">
-      <svg class="emblem" viewBox="0 0 240 240" role="img" aria-label="Wasatch Ad Co, Utah">
+    <svg class="emblem" viewBox="0 0 240 240" role="img" aria-label="Wasatch Ad Co, Utah">
       <defs>
         <path id="ctaTop" d="M 32 120 A 88 88 0 0 1 208 120"/>
         <path id="ctaBot" d="M 17 120 A 103 103 0 0 0 223 120"/>
@@ -134,14 +180,24 @@ footer { text-align: center; padding: 26px 0; font-size: 0.9rem; color: #666; }
         <path d="M84 23 L102 17 L100 36 Z" fill="#ff7a1a"/>
       </svg>
     </svg>
-    <h2>Ready for a fuller calendar?</h2>
-    <p>Send a quick email and we'll talk about what more leads could look like for your business.</p>
-    <a class="btn" href="https://calendly.com/ryan-wasatchadco/30min">Book a 15-minute call</a>
+    <h2>Two ways to start.</h2>
+    <div class="ways">
+      <div class="way">
+        <h3>Talk it through</h3>
+        <p>A quick 15-minute call. We'll look at your area, your services and whether ads make sense for you.</p>
+        <a class="btn" href="https://calendly.com/ryan-wasatchadco/15min">Book a call</a>
+      </div>
+      <div class="way">
+        <h3>Skip the call</h3>
+        <p>Answer three quick questions by email, and I'll send back a simple plan for your business.</p>
+        <a class="btn btn-ghost" href="mailto:ryan@wasatchadco.com?subject=Plan%20for%20my%20business&body=1.%20Business%20name%20and%20what%20you%20do%3A%0A%0A2.%20Cities%20you%20serve%3A%0A%0A3.%20How%20many%20more%20jobs%20a%20month%20you%20could%20take%3A%0A">Email my answers</a>
+      </div>
+    </div>
   </div>
 </section>
 
 <footer>
-  <div>&copy; 2026 Wasatch Ad Co &middot; <a href="privacy.html">Privacy Policy</a></div>
+  &copy; 2026 Wasatch Ad Co &middot; <a href="privacy.html">Privacy Policy</a>
 </footer>
 
 <script>
